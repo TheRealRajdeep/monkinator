@@ -1,0 +1,76 @@
+{
+  "name": "JobGuessingGameFactory",
+  "address": "0x227c1031ac10ab7342b6b9f54d3b2d9fbfcd9fac",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "gameContract",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "commitReveal",
+          "type": "address"
+        }
+      ],
+      "name": "GameContractDeployed",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "commitReveal",
+      "outputs": [
+        {
+          "internalType": "contract CommitReveal",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "gameContract",
+      "outputs": [
+        {
+          "internalType": "contract JobGuessingGame",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getContractAddresses",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "filePath": "monkinator-contracts/contracts/JobGuessingGameFactory.sol",
+  "pinnedAt": 1761387154134
+}

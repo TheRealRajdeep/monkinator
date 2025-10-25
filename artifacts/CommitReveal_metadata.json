@@ -1,0 +1,301 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					}
+				],
+				"name": "JobCommitted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "job",
+						"type": "string"
+					}
+				],
+				"name": "JobRevealed",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "COMMIT_DURATION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "REVEAL_DURATION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_jobHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "commitJob",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "commits",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "revealed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_player",
+						"type": "address"
+					}
+				],
+				"name": "getCommit",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "hash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "revealed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct CommitReveal.Commit",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_player",
+						"type": "address"
+					}
+				],
+				"name": "hasCommitted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_player",
+						"type": "address"
+					}
+				],
+				"name": "hasRevealed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_job",
+						"type": "string"
+					}
+				],
+				"name": "revealJob",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "revealedJobs",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_player",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_job",
+						"type": "string"
+					}
+				],
+				"name": "verifyReveal",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"commitJob(bytes32)": {
+					"details": "Commit a job hash before starting the game"
+				},
+				"getCommit(address)": {
+					"details": "Get commit details for a player"
+				},
+				"hasCommitted(address)": {
+					"details": "Check if a player has committed"
+				},
+				"hasRevealed(address)": {
+					"details": "Check if a player has revealed"
+				},
+				"revealJob(string)": {
+					"details": "Reveal the actual job after game completion"
+				},
+				"verifyReveal(address,string)": {
+					"details": "Verify if a job reveal is valid"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/CommitReveal.sol": "CommitReveal"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/CommitReveal.sol": {
+			"keccak256": "0x4b8fddee2e64d728a1b7b06bea7c0d885480a8368f6b1a150ec0450ae34feeac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9c2202d5b0d9b2f723c380f90fa0c8cdf2b4b0702ce8839f4e2faecd331c2853",
+				"dweb:/ipfs/QmbqrqnNZrbNZKyTE5VUbKuabVJXmWdpaqVGNBeWVnufSK"
+			]
+		}
+	},
+	"version": 1
+}

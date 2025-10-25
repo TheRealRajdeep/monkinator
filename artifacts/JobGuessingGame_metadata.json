@@ -1,0 +1,437 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_commitRevealAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "FundsWithdrawn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "aiGuessedCorrectly",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "payout",
+						"type": "uint256"
+					}
+				],
+				"name": "GameCompleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "depositAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "GameStarted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "job",
+						"type": "string"
+					}
+				],
+				"name": "JobRevealed",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DEPOSIT_AMOUNT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "HOUSE_EDGE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "REWARD_AMOUNT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "activeGames",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_player",
+						"type": "address"
+					}
+				],
+				"name": "calculatePayout",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "claimWinnings",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "commitReveal",
+				"outputs": [
+					{
+						"internalType": "contract CommitReveal",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "emergencyWithdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "games",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "depositAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum JobGuessingGame.GameStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "aiGuessedCorrectly",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "playerClaimed",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "revealedJob",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "jobRevealed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getContractBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_player",
+						"type": "address"
+					}
+				],
+				"name": "getGameDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "player",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "depositAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum JobGuessingGame.GameStatus",
+								"name": "status",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "aiGuessedCorrectly",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "playerClaimed",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "revealedJob",
+								"type": "string"
+							},
+							{
+								"internalType": "bool",
+								"name": "jobRevealed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct JobGuessingGame.Game",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_job",
+						"type": "string"
+					}
+				],
+				"name": "revealJob",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startGame",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_aiGuessedCorrectly",
+						"type": "bool"
+					}
+				],
+				"name": "submitGuessResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculatePayout(address)": {
+					"details": "Calculate payout based on game result"
+				},
+				"claimWinnings()": {
+					"details": "Claim winnings after job is revealed"
+				},
+				"emergencyWithdraw()": {
+					"details": "Emergency function to withdraw contract balance (only owner)"
+				},
+				"getContractBalance()": {
+					"details": "Get contract balance"
+				},
+				"getGameDetails(address)": {
+					"details": "Get game details for a player"
+				},
+				"revealJob(string)": {
+					"details": "Reveal the job after game completion"
+				},
+				"startGame()": {
+					"details": "Start a new game by depositing 0.2 MON tokens"
+				},
+				"submitGuessResult(bool)": {
+					"details": "Submit AI's guess result (only callable by backend)"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/JobGuessingGame.sol": "JobGuessingGame"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/CommitReveal.sol": {
+			"keccak256": "0x4b8fddee2e64d728a1b7b06bea7c0d885480a8368f6b1a150ec0450ae34feeac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9c2202d5b0d9b2f723c380f90fa0c8cdf2b4b0702ce8839f4e2faecd331c2853",
+				"dweb:/ipfs/QmbqrqnNZrbNZKyTE5VUbKuabVJXmWdpaqVGNBeWVnufSK"
+			]
+		},
+		"contracts/JobGuessingGame.sol": {
+			"keccak256": "0xc6c808beb730ff8b2cd2fc548cc025d64a89ff4b3da1ffea03d41c95a184156c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3fb544c8856f5cc225e2fa469f4160c747bfe8a99b0d36a989b1bc9b042e785f",
+				"dweb:/ipfs/QmVV7E1HXnRx3cpVLj5e3WChmN3wYDWHYTMet2HYtgktsn"
+			]
+		}
+	},
+	"version": 1
+}

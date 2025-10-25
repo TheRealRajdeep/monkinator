@@ -1,0 +1,134 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "gameContract",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "commitReveal",
+						"type": "address"
+					}
+				],
+				"name": "GameContractDeployed",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "commitReveal",
+				"outputs": [
+					{
+						"internalType": "contract CommitReveal",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "gameContract",
+				"outputs": [
+					{
+						"internalType": "contract JobGuessingGame",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getContractAddresses",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getContractAddresses()": {
+					"details": "Get contract addresses"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/JobGuessingGameFactory.sol": "JobGuessingGameFactory"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/CommitReveal.sol": {
+			"keccak256": "0x4b8fddee2e64d728a1b7b06bea7c0d885480a8368f6b1a150ec0450ae34feeac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9c2202d5b0d9b2f723c380f90fa0c8cdf2b4b0702ce8839f4e2faecd331c2853",
+				"dweb:/ipfs/QmbqrqnNZrbNZKyTE5VUbKuabVJXmWdpaqVGNBeWVnufSK"
+			]
+		},
+		"contracts/JobGuessingGame.sol": {
+			"keccak256": "0xc6c808beb730ff8b2cd2fc548cc025d64a89ff4b3da1ffea03d41c95a184156c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3fb544c8856f5cc225e2fa469f4160c747bfe8a99b0d36a989b1bc9b042e785f",
+				"dweb:/ipfs/QmVV7E1HXnRx3cpVLj5e3WChmN3wYDWHYTMet2HYtgktsn"
+			]
+		},
+		"contracts/JobGuessingGameFactory.sol": {
+			"keccak256": "0xfd1fe2dec5c6df53b1ff20d85035153f2860ab7b73b4f97480ccb04f45d5e37f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://262fd2b171502bd53d5a5703fe61a0dc095cfdc9c903fc2508ed4f1ee214e81a",
+				"dweb:/ipfs/QmVoXu9kYLAb96AkKoVXWXC3UK8JgQ2ndcoQKLs14hdhLM"
+			]
+		}
+	},
+	"version": 1
+}
